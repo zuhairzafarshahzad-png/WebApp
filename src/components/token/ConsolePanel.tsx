@@ -1,0 +1,2 @@
+import { Circle, Terminal, Trash2 } from 'lucide-react';
+export function ConsolePanel({messages,onClear}:{messages:string[];onClear:()=>void}){return <section className="console"><header><h2><Terminal/> Console</h2><span><i/> LIVE</span><button onClick={onClear}><Trash2/> Clear</button></header><div>{messages.length?messages.map((m,i)=><p key={`${m}-${i}`}><i/>[{m}]</p>):<p className="muted-console"><Circle size={6}/> Console cleared. Waiting for activity...</p>}</div></section>}
